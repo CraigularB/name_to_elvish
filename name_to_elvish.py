@@ -95,12 +95,14 @@ def make_map(name):
     create_image(final, name)
 
 
-def main(name):
-    if not isinstance(name, str):
-        raise TypeError('Invalid input')
+def main():
+    name = input("Please enter a name: ")
+    while not name.isalpha():
+        print('Invalid input. Names should contain only letters.')
+        name = input("Please enter a name: ")
     name = name.upper()
     make_map(name)
 
 
 if __name__ == "__main__":
-    main("Craigular")
+    main()
